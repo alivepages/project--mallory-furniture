@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Nav from './components/Nav'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import HomeView from './components/HomeView'
 import TermsView from './components/TermsView'
 import AboutView from './components/AboutView'
@@ -12,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav />
+        <Header />
         <Switch>
           <Route exact path="/" component={HomeView}/>
           <Route exact path="/about" component={AboutView}/>
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/product/:id" component={ProductView}/>
           <Route exact path="/category/:id" component={CategoryView}/>
         </Switch>
+        <Footer />
       </div>
     );
   }

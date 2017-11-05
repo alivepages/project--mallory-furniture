@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
+import SectionTitle from './SectionTitle.js';
+import Tools from './Tools.js';
+import AllProducts from './AllProducts.js';
 
 export default class AllProductsView extends Component {
   render() {
     return (
-    <div>
-      all products
-    </div>
+      <section>
+        <div className="content">
+          <section>
+            <SectionTitle title="All Products" subtitle="All available listings"/>
+            <Tools/>
+            <AllProducts category="all"/>
+          </section>
+        </div>
+      </section>
     );
   }
 }
