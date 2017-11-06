@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 import Item from './Item.js';
+import Tools from './Tools.js';
 
 export default class AllProducts extends Component {
   constructor() {
     super();
     this.state = {
       productsData: [],
-      category: ''
+      category: '',
+      filterOnSale: false
     };
   }
+
   _getData = category => {
     var URL = 'https://mallory-furniture-admin.now.sh/api/v1/products';
     if (category !== 'all') {
@@ -29,23 +32,63 @@ export default class AllProducts extends Component {
         })
       })
   }
+
+  setTotal = (total) => {
+    this.setState({
+      total: total
+    })
+  }
+
+  getTotal = () => {
+    var products = this.state.productsData
+    .filter((product) => {
+      return (!this.state.filterOnSale || product.onSale === true)
+    });
+    return products.length;
+  }
+
+  setFilterOnSale = () => {
+    this.setState({
+      filterOnSale: true
+    })
+  }
+
+  setFilterOff = () => {
+    this.setState({
+      filterOnSale: false
+    })
+  }
+
   componentWillMount = () => {
     this._getData(this.props.category);
   }
+
   componentWillReceiveProps = () => {
     this._getData(this.props.category);
   }
+
   render() {
-    let products = <p>Loading...</p>;
+    let products = <p className="error">No products found</p>;
     let productsData = this.state.productsData
     if (typeof productsData !== 'undefined' && productsData.length > 0) {
-      products = productsData.map((obj, index) => {
-        return <Item itemData={obj} key={index}/>
+      products = productsData
+      .filter((product) => {
+        return (!this.state.filterOnSale || product.onSale === true)
       })
+      .map((obj, index) => {
+        return <Item itemData={obj} key={index}/>
+      });
+    }
+    var tools = '';
+    if (this.props.tools !== 'no') {
+      tools = <Tools getTotal={this.getTotal} setFilterOnSale={this.setFilterOnSale} setFilterOff={this.setFilterOff}/>
     }
     return (
-      <div className="grid">
-        {products}
+      <div>
+        {tools}
+        <div className="grid">
+          {products}
+        </div>
       </div>
     );
   }

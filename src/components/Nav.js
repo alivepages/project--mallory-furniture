@@ -20,7 +20,7 @@ export default class Nav extends Component {
             <Link to="/all-products">All</Link>
             {links}
             <span className="separator">|</span>
-            <i className="fa fa-shopping-cart cart" aria-hidden="true"></i>
+            <i className="fa fa-shopping-cart cart" aria-hidden="true" onClick={this.props.cartOpen}></i>
           </div>
         </div>
       </nav>

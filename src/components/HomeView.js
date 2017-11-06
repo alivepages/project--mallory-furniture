@@ -37,7 +37,7 @@ export default class HomeView extends Component {
         <div className="content">
           <section>
             <SectionTitle title="Featured Products" subtitle="Check out some of our favorite listings"/>
-            <AllProducts category="all" limit="6"/>
+            <AllProducts category="all" limit="6" tools="no"/>
             <div className="grid">
               <button type="button" className="red" onClick={this._goToAll}>All Products</button>
             </div>

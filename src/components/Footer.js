@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../images/mf-logo-black.svg';
+import { Link } from 'react-router-dom';
 
 export default class Header extends Component {
   render() {
@@ -11,22 +12,22 @@ export default class Header extends Component {
           <div className="grid">
           <ul>
             <li>Company</li>
-            <li>About</li>
+            <li><Link to="/about">About</Link></li>
             <li>Press</li>
-            <li>Terms + Condittions</li>
+            <li><Link to="/terms">Terms + Condittions</Link></li>
           </ul>
           <ul>
-            <li>Company</li>
-            <li>About</li>
-            <li>Press</li>
-            <li>Terms + Condittions</li>
+            <li>Categories</li>
+            <li><Link to="/category/Setting">Setting</Link></li>
+            <li><Link to="/category/Tables">Tables</Link></li>
+            <li><Link to="/category/Misc">Misc</Link></li>
           </ul>
           <ul>
             <li>Social</li>
             <li>
-            <i className="fa fa-instagram" aria-hidden="true"></i>
-            <i className="fa fa-twitter" aria-hidden="true"></i>
-            <i className="fa fa-pinterest" aria-hidden="true"></i>
+            <a href="http://www.instagram.com" target="_blank"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="http://twitter.com" target="_blank"><i className="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="http://www.pinterest.com.mx" target="_blank"><i className="fa fa-pinterest" aria-hidden="true"></i></a>
             </li>
           </ul>
           </div>

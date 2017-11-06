@@ -28,7 +28,7 @@ export default class ProductView extends Component {
   render() {
     var product = <div className="error">Product not found</div>;
     if (this.state.productData !== null) {
-      product = <Product productData={this.state.productData} />;
+      product = <Product productData={this.state.productData} cartAdd={this.props.cartAdd} />;
     }
     return (
       <section>

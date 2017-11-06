@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 export default class Product extends Component {
+  cartAdd = () => {
+    var data = this.props.productData;
+    this.props.cartAdd(data);
+  }
   render() {
     var productData = this.props.productData;
     return (
@@ -13,7 +17,7 @@ export default class Product extends Component {
           <div className="grid">
             <div><span>Condition</span><br/>{productData.condition}</div>
             <div><span>Measuremments</span><br/>W:{productData.width} L:{productData.length} H:{productData.height}</div>
-            <div><button className="add-to-cart">Add to Cart</button></div>
+            <div><button className="add-to-cart" onClick={this.cartAdd}>Add to Cart</button></div>
           </div>
         </div>
       </section>
