@@ -35,19 +35,19 @@ export default class HomeView extends Component {
       <section>
         <Splash/>
         <div className="content">
-          <section>
+          <article>
             <SectionTitle title="Featured Products" subtitle="Check out some of our favorite listings"/>
             <AllProducts category="all" limit="6" tools="no"/>
             <div className="grid">
               <button type="button" className="red" onClick={this._goToAll}>All Products</button>
             </div>
-          </section>
-          <section>
+          </article>
+          <article>
             <SectionTitle title="Browse by Categories" subtitle="Explore by furniture type"/>
             <div className="grid">
               {buttons}
             </div>
-          </section>
+          </article>
         </div>
       </section>
     );

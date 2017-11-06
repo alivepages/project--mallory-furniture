@@ -68,9 +68,9 @@ export default class AllProducts extends Component {
   }
 
   render() {
-    let products = <p className="error">No products found</p>;
+    let products = <p className="error">Loading</p>;
     let productsData = this.state.productsData
-    if (typeof productsData !== 'undefined' && productsData.length > 0) {
+    if (typeof productsData !== 'undefined') {
       products = productsData
       .filter((product) => {
         return (!this.state.filterOnSale || product.onSale === true)
@@ -79,6 +79,7 @@ export default class AllProducts extends Component {
         return <Item itemData={obj} key={index}/>
       });
     }
+
     var tools = '';
     if (this.props.tools !== 'no') {
       tools = <Tools getTotal={this.getTotal} setFilterOnSale={this.setFilterOnSale} setFilterOff={this.setFilterOff}/>
