@@ -10,7 +10,7 @@ export default class CategoryView extends Component {
     return (
       <section>
         <div className="content">
-          <CategoryImage/>
+          <CategoryImage category={category}/>
           <section>
             <SectionTitle title={category} subtitle={subtitle}/>
             <AllProducts category={category}/>
