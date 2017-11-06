@@ -302,6 +302,8 @@ button.gray {
   color: #222;
   z-index: 1;
   text-align: center;
+  background-color: #CCC9;
+  height: 100%;
 }
 
 .scart .cart-header {
@@ -315,7 +317,7 @@ button.gray {
 }
 
 .scart .cart-title {
-  padding: 13px;
+  padding: 17px;
 }
 
 .scart .cart-item {
@@ -356,6 +358,16 @@ button.gray {
   text-align: right;
 }
 
+.scart .products {
+  background-color: white;
+}
+
 .hidden {
   visibility: hidden;
+}
+
+.no-item {
+  font-size: 14px;
+  background-color: white;
+  padding: 20px;
 }

@@ -11,6 +11,11 @@ export default class Cart extends Component {
     var CartItems = cartData.map((obj, index) => {
         return <CartItem itemData={obj} cartRemove={this.props.cart.cartRemove} index={index} key={index}/>
     });
+    var styleItems = 'grid products';
+    if (CartItems.length < 1) {
+      styleItems += ' no-item';
+      CartItems = <span>No items in Cart</span>
+    }
     return (
       <div className={style}>
         <div className="cart-header">
@@ -18,7 +23,7 @@ export default class Cart extends Component {
           <span className="cart-title">Your Cart</span>
           <span className="close hidden">X</span>
         </div>
-        <div className="grid products">
+        <div className={styleItems}>
           {CartItems}
         </div>
       </div>
