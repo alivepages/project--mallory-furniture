@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router'
-import SectionTitle from './SectionTitle.js';
-import Splash from './Splash.js';
-import AllProducts from './AllProducts.js';
+import SectionTitle from '../components/SectionTitle.js';
+import Splash from '../components/Splash.js';
+import AllProducts from '../components/AllProducts.js';
 import {categories} from '../data/categories';
 
 export default class HomeView extends Component {

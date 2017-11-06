@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SectionTitle from './SectionTitle.js';
-import AllProducts from './AllProducts.js';
-import CategoryImage from './CategoryImage.js';
+import SectionTitle from '../components/SectionTitle.js';
+import AllProducts from '../components/AllProducts.js';
+import CategoryImage from '../components/CategoryImage.js';
 
 export default class CategoryView extends Component {
   render() {

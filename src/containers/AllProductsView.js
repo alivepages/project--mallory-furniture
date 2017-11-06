@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SectionTitle from './SectionTitle.js';
-import AllProducts from './AllProducts.js';
+import SectionTitle from '../components/SectionTitle.js';
+import AllProducts from '../components/AllProducts.js';
 
 export default class AllProductsView extends Component {
   render() {

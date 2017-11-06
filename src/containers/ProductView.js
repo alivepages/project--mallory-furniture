@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import request from 'superagent';
-import Product from './Product'
+import Product from '../components/Product'
 
 export default class ProductView extends Component {
   constructor() {

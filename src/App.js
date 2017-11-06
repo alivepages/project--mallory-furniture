@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header'
 import Footer from './components/Footer'
-import HomeView from './components/HomeView'
-import TermsView from './components/TermsView'
-import AboutView from './components/AboutView'
-import AllProductsView from './components/AllProductsView'
-import ProductView from './components/ProductView'
-import CategoryView from './components/CategoryView'
+import HomeView from './containers/HomeView'
+import TermsView from './containers/TermsView'
+import AboutView from './containers/AboutView'
+import AllProductsView from './containers/AllProductsView'
+import ProductView from './containers/ProductView'
+import CategoryView from './containers/CategoryView'
+import NotFound from './containers/NotFound';
 
 class App extends Component {
   constructor() {
@@ -67,6 +68,7 @@ class App extends Component {
           <Route path="/product/:id" render = {(props) => (
             <ProductView {... props} cartAdd={this.cartAdd} />
           )} />
+          <Route path="*" component={NotFound} />
         </Switch>
         <Footer />
       </div>
