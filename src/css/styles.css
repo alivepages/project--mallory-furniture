@@ -375,3 +375,9 @@ button.gray {
   background-color: white;
   padding: 20px;
 }
+
+.error {
+  font-size: 24px !important;
+  color: #FFC107;
+  margin-bottom: 48px !important;
+}

@@ -9,11 +9,15 @@ export default class AllProducts extends Component {
     this.state = {
       productsData: [],
       category: '',
-      filterOnSale: false
+      filterOnSale: false,
+      loading: true
     };
   }
 
   _getData = category => {
+    this.setState({
+      loading: true
+    })
     var URL = 'https://mallory-furniture-admin.now.sh/api/v1/products';
     if (category !== 'all') {
       URL += '?category=' + category.toLowerCase();
@@ -28,7 +32,8 @@ export default class AllProducts extends Component {
         }
         this.setState({
           category: category,
-          productsData: products
+          productsData: products,
+          loading: false
         })
       })
   }
@@ -68,9 +73,9 @@ export default class AllProducts extends Component {
   }
 
   render() {
-    let products = <p className="error">Loading</p>;
+    let products = <p className="error">Loading ...</p>;
     let productsData = this.state.productsData
-    if (typeof productsData !== 'undefined') {
+    if (!this.state.loading) {
       products = productsData
       .filter((product) => {
         return (!this.state.filterOnSale || product.onSale === true)
